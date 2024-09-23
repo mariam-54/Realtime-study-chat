@@ -1,13 +1,220 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+    --primary-color: #183D3D;
+    --secondary-color: #5c8374ec;
+    --dark-color: #040D12;
+    --light-color: #e6e9ff;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    /* استخدام rem */
+    background: var(--dark-color);
+    margin: 1.25rem;
+    /* 20px */
+}
+
+input:focus {
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 50px 10px / 20%;
+    font-size: 1.125rem;
+    margin-left: 0.3125rem;
+}
+
+/**************************************  Start Chat Page Style ********************************************/
+.chat-container {
+    max-width: 1100px;
+    background: var(--dark-color);
+    margin: 1.875rem auto;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: var(--primary-color);
+    color: #fff;
+    border-top-left-radius: 0.3125rem;
+    border-top-right-radius: 0.3125rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header h2 {
+    font-size: 2.1875rem;
+    display: flex;
+    align-items: center;
+}
+
+.chat-icon {
+    color: var(--secondary-color);
+    margin-left: 0.625rem;
+}
+
+.chat-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.chat-sidebar {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 1.25rem;
+    overflow-y: scroll;
+}
+
+.chat-sidebar h2 {
+    font-size: 1.25rem;
+    background: var(--secondary-color);
+    padding: 0.625rem;
+    margin-bottom: 1.25rem;
+}
+
+.chat-sidebar h3 {
+    margin-bottom: 0.9375rem;
+}
+
+.chat-sidebar ul li {
+    padding: 0.625rem 0.3125rem;
+    background-color: var(--secondary-color);
+}
+
+.chat-messages {
+    padding: 1.875rem;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.chat-messages .message {
+    padding: 0.625rem;
+    margin-bottom: 0.9375rem;
+    background-color: var(--light-color);
+    border-radius: 0.3125rem;
+    overflow-wrap: break-word;
+}
+
+.chat-messages .message .meta {
+    font-size: 0.9375rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    opacity: 0.9;
+    margin-bottom: 0.4375rem;
+}
+
+.chat-messages .message .meta span {
+    color: #777;
+    margin-left: 0.3125rem;
+}
+
+.chat-form-container {
+    padding: 1.25rem 1.875rem;
+    background-color: var(--dark-color);
+}
+
+.chat-form-container form {
+    display: flex;
+}
+
+.chat-form-container input[type='text'] {
+    font-size: 1rem;
+    padding: 0.3125rem;
+    height: 2.5rem;
+    flex: 1;
+}
+
+/**************************************  End Chat Page Style ********************************************/
+
+
+/**************************************  Start Join Page Style ********************************************/
+.join-container {
+    max-width: 500px;
+    margin: 5rem auto;
+    color: #fff;
+}
+
+.join-header {
+    text-align: center;
+    padding: 1.25rem;
+    background: var(--dark-color);
+    border-top-left-radius: 0.3125rem;
+    border-top-right-radius: 0.3125rem;
+}
+
+.join-header h2 {
+    font-size: 2.1875rem;
+    display: flex;
+    align-items: center;
+}
+
+.join-main {
+    padding: 1.875rem 2.5rem;
+    background: var(--primary-color);
+}
+
+.join-main p {
+    margin-bottom: 1.25rem;
+}
+
+.join-main .form-control {
+    margin-bottom: 1.25rem;
+}
+
+.join-main label {
+    display: block;
+    margin-bottom: 0.3125rem;
+}
+
+.join-main input[type='text'],
+.join-main select {
+    font-size: 1rem;
+    padding: 0.3125rem;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.join-main .btn {
+    margin-top: 1.25rem;
+    width: 100%;
+}
+
+/**************************************  End Join Page Style ********************************************/
+
+/* Media Quieres */
+
+@media (max-width: 700px) {
+    .chat-main {
+        display: block;
+    }
+
+    .chat-sidebar {
+        display: none;
+    }
 }
